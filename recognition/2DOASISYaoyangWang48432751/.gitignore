@@ -1,0 +1,43 @@
+## Prevent uploading models, datasets, caches, log files, etc.
+# Datasets
+data/
+datasets/
+*.csv
+*.tsv
+*.json
+*.zip
+*.tar
+*.gz
+
+# Model files
+models/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.pkl
+*.npz
+*.npy
+
+# Logs and temporary outputs
+__pycache__/
+*.log
+*.tmp
+outputs/
+runs/
+.DS_Store
+*.swp
+
+# Visualisation cache
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+
+# Jupyter / IDE specific
+.ipynb_checkpoints/
+.vscode/
+.idea/
