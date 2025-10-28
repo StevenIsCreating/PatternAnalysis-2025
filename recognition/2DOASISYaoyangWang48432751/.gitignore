@@ -1,5 +1,10 @@
-## Prevent uploading models, datasets, caches, log files, etc.
-# Datasets
+## ======================================
+## COMP3710: Rangpur Project .gitignore
+## ======================================
+
+# --------------------------------------
+# 🧠 Datasets and raw data (never commit)
+# --------------------------------------
 data/
 datasets/
 *.csv
@@ -8,8 +13,12 @@ datasets/
 *.zip
 *.tar
 *.gz
+*.nii
+*.nii.gz
 
-# Model files
+# --------------------------------------
+# 🧩 Model weights and checkpoints
+# --------------------------------------
 models/
 checkpoints/
 *.pt
@@ -21,23 +30,40 @@ checkpoints/
 *.npz
 *.npy
 
-# Logs and temporary outputs
+# --------------------------------------
+# 🧾 Logs and runtime artifacts
+# --------------------------------------
 __pycache__/
 *.log
 *.tmp
+*.out
+*.err
 outputs/
 runs/
-.DS_Store
-*.swp
+wandb/
+*.ipynb_checkpoints/
 
-# Visualisation cache
-*.png
-*.jpg
-*.jpeg
-*.svg
-*.pdf
+# --------------------------------------
+# 🖼️ Figures and visualizations
+# (Keep specific ones for README)
+# --------------------------------------
+predictions_viz/
+figs_loss_curve.png
+figs_dice_curve.png
+!README_figs/
+README_figs/*
 
-# Jupyter / IDE specific
-.ipynb_checkpoints/
+# --------------------------------------
+# 🧰 Environment and IDE files
+# --------------------------------------
 .vscode/
 .idea/
+.DS_Store
+*.swp
+.env
+*.bak
+
+# --------------------------------------
+# 🧪 Jupyter and notebooks (optional)
+# --------------------------------------
+*.ipynb
