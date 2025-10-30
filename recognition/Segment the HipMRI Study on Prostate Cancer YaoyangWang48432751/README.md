@@ -10,6 +10,7 @@ The model achieves a Dice coefficient of 0.9438 on the prostate label in the tes
 ## Project Structure
 
 recognition/
+
 └── Segment the HipMRI Study on Prostate Cancer YaoyangWang48432751/
 
     ├── checkpoints/
