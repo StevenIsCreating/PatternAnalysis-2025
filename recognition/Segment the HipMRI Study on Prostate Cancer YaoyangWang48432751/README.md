@@ -1,21 +1,21 @@
 Improved 2D U-Net for Prostate Cancer Segmentation on HipMRI Dataset
-🧠 Overview
 
+🧠 Overview
 This project implements an Improved 2D U-Net architecture for multi-class segmentation of MRI images from the HipMRI Study on Prostate Cancer.
 The model achieves a Dice coefficient of 0.9438 on the prostate label in the test set, surpassing the project requirement (≥0.75).
 
 📂 Project Structure
 recognition/
 └── Segment the HipMRI Study on Prostate Cancer YaoyangWang48432751/
-    ├── checkpoints/
-    │   └── training_curves.png
-    ├── predictions/
-    │   ├── overlays.png
-    │   └── predictions.png
-    ├── dataset.py
-    ├── modules.py
-    ├── predict.py
-    └── train.py
+├── checkpoints/
+│ └── training_curves.png
+├── predictions/
+│ ├── overlays.png
+│ └── predictions.png
+├── dataset.py
+├── modules.py
+├── predict.py
+└── train.py
 
 🧩 Architecture
 
