@@ -1,23 +1,28 @@
 Improved 2D U-Net for Prostate Cancer Segmentation on HipMRI Dataset
 
-🧠 Overview
+
+## Overview
+
 This project implements an Improved 2D U-Net architecture for multi-class segmentation of MRI images from the HipMRI Study on Prostate Cancer.
 The model achieves a Dice coefficient of 0.9438 on the prostate label in the test set, surpassing the project requirement (≥0.75).
 
-📂 Project Structure
+
+## Project Structure
+
 recognition/
 └── Segment the HipMRI Study on Prostate Cancer YaoyangWang48432751/
-├── checkpoints/
-│ └── training_curves.png
-├── predictions/
-│ ├── overlays.png
-│ └── predictions.png
-├── dataset.py
-├── modules.py
-├── predict.py
-└── train.py
+    ├── checkpoints/
+    │   └── training_curves.png
+    ├── predictions/
+    │   ├── overlays.png
+    │   └── predictions.png
+    ├── dataset.py
+    ├── modules.py
+    ├── predict.py
+    └── train.py
 
-🧩 Architecture
+
+## Architecture
 
 Encoder: 4 down-sampling convolutional blocks
 
@@ -27,7 +32,8 @@ Decoder: 4 up-sampling blocks with skip connections
 
 Classifier: 1×1 convolution output layer
 
-⚙️ Key Improvements
+
+## Key Improvements
 
 Added Batch Normalization for training stability
 
@@ -37,7 +43,8 @@ Adopted Dice loss for segmentation optimization
 
 Automatically detects label mappings for multi-class data
 
-🧮 Dataset Handling
+
+## Dataset Handling
 
 Matches image–mask pairs automatically
 
@@ -47,17 +54,19 @@ Converts masks to one-hot tensors
 
 Resizes all images/masks to 256×256
 
-Dataset split folders:
 
-keras_slices_train / keras_slices_seg_train  
-keras_slices_validate / keras_slices_seg_validate  
-keras_slices_test / keras_slices_seg_test  
+## Dataset split folders:
 
-🧠 Training
+keras_slices_train / keras_slices_seg_train
+keras_slices_validate / keras_slices_seg_validate
+keras_slices_test / keras_slices_seg_test
 
-Training is managed by train.py using Adam optimizer and Dice loss.
 
-💻 Command (for example)
+raining is managed by train.py using Adam optimizer and Dice loss.
+
+
+## Command（for example）
+
 python train.py `
   --data_path "D:\COMP3710A3\PatternAnalysis-2025\recognition\data\HipMRI_2D_data\keras_slices_data" `
   --epochs 30 `
@@ -74,8 +83,11 @@ python .\predict.py `
   --out_dir ".\predictions" `
   --device cuda
 
-📊 Outputs (train.py)
+
+## Outputs(train.py)
+
 Dice score per channel on test set:
+
 --------------------------------
 Channel 0: 0.9965
 Channel 1: 0.9813
@@ -84,26 +96,41 @@ Channel 3: 0.9438
 Channel 4: 0.8915
 Channel 5: 0.8589
 
+
 Average Dice: 0.9322
 Average Dice: 0.9322
 Prostate Dice (channel 3): 0.9438
 Prostate Dice (channel 3): 0.9438
 
-📈 Training Curve
+### Training Curve
+
 ![Training Curve](checkpoints/training_curves.png)
+##if can not open, i already uploaded in github.
 
-If the image cannot open, it has already been uploaded to GitHub.
 
-🔍 Outputs (predict.py)
+## Outputs(predict.py)
+
+[predict] device: cuda
 [predict] device: cuda
 [predict] loading data loaders ...
+[predict] loading data loaders ...
 Dataset splits:
+Dataset splits:
+  Train: 11460 files
   Train: 11460 files
   Val:   660 files
   Test:  540 files
+  Val:   660 files
+  Test:  540 files
+
+  Test:  540 files
+
 
 Label set (6 classes): [0, 1, 2, 3, 4, 5]
+Label set (6 classes): [0, 1, 2, 3, 4, 5]
 [predict] prostate channel = 3
+[predict] prostate channel = 3
+[predict] loading checkpoint: checkpoints\best_model.pth
 [predict] loading checkpoint: checkpoints\best_model.pth
 [predict] ckpt num_classes = 6
 
@@ -114,6 +141,8 @@ Label set (6 classes): [0, 1, 2, 3, 4, 5]
   ch3: 0.9773
   ch4: 1.0000
   ch5: 1.0000
+  ch5: 1.0000
+
 
 [predict] prostate Dice (ch 3): 0.9773
 [predict] spec OK (>=0.75)
@@ -122,20 +151,26 @@ Label set (6 classes): [0, 1, 2, 3, 4, 5]
 
 [predict] done. outputs -> .\predictions
 
-🧠 Segmentation Results
+### Segmentation Results
 ![Predictions](predictions/predictions.png)
 
-🩸 Prostate Overlay Visualization
+### Prostate Overlay Visualization
 ![Overlays](predictions/overlays.png)
 
-If the image cannot open, it has already been uploaded to GitHub.
+##if can not open, i already uploaded in github.
 
-📈 Performance (epoch = 10)
-Metric	Value
-Mean Dice	0.9322
-Prostate Dice	0.9438
-Requirement	≥ 0.75 ✅
-🧰 Environments
+
+## Performance(epoch=10)
+
+Mean Dice----0.9322
+
+Prostate Dice----0.9438
+
+Requirement----≥ 0.75(get it!)
+
+
+## Environments
+
 colorama==0.4.6
 contourpy==1.3.3
 cycler==0.12.1
@@ -167,7 +202,16 @@ torchvision==0.21.0+cu124
 tqdm==4.67.1
 typing_extensions==4.15.0
 
-🧾 Summary
+
+## Summary
 
 The improved 2D U-Net effectively segments prostate regions on HipMRI slices, showing excellent generalization and stability.
 Its modular design (automatic label mapping, one-hot encoding, and Dice metrics) makes it suitable for future medical image segmentation research.
+
+
+
+
+
+
+
+
